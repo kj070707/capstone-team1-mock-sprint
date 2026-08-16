@@ -9,7 +9,14 @@ const PROJECT_NAME = 'Capstone Project 1'
 const ABOUT =
   'A four-person capstone team turning the client brief into a working product across three sprints.'
 
-const members = [
+type Member = {
+  name: string
+  role: string
+  blurb: string
+  photo?: string
+}
+
+const members: Member[] = [
   {
     name: 'Kaiyang',
     role: 'Project Manager',
@@ -19,16 +26,19 @@ const members = [
     name: 'Sabah',
     role: 'Business Analyst',
     blurb: 'Turns client conversations into clear requirements for the team.',
+    photo: 'https://randomuser.me/api/portraits/women/44.jpg',
   },
   {
     name: 'Zeeshan',
     role: 'UX Designer',
     blurb: 'Designs the interface and the flow from login into the team page.',
+    photo: 'https://randomuser.me/api/portraits/men/32.jpg',
   },
   {
     name: 'Karmanya',
     role: 'Developer',
     blurb: 'Builds the features and ships them through the git workflow.',
+    photo: 'https://randomuser.me/api/portraits/men/75.jpg',
   },
 ]
 
@@ -67,9 +77,18 @@ export default async function TeamPage() {
         <div className="grid gap-4 sm:grid-cols-2">
           {members.map((m) => (
             <div key={m.name} className="flex gap-4 rounded-lg border border-zinc-200 p-4 transition-colors hover:border-indigo-300 dark:border-zinc-800">
-              <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-indigo-100 text-lg font-semibold text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300">
-                {initials(m.name)}
-              </div>
+              {m.photo ? (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  src={m.photo}
+                  alt={m.name}
+                  className="h-16 w-16 shrink-0 rounded-full object-cover"
+                />
+              ) : (
+                <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-indigo-100 text-lg font-semibold text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300">
+                  {initials(m.name)}
+                </div>
+              )}
               <div className="space-y-1">
                 <h3 className="font-medium">{m.name}</h3>
                 <span className="inline-block rounded-full bg-indigo-100 px-2 py-0.5 text-xs font-medium text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300">
