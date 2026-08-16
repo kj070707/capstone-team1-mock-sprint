@@ -67,7 +67,7 @@ export default async function TeamPage() {
           <p className="text-lg">{PROJECT_NAME}</p>
         </div>
         <div>
-          <h2 className="text-xs font-semibold uppercase tracking-wide text-indigo-600 dark:text-indigo-400">About the team</h2>
+          <h2 className="text-xs font-semibold uppercase tracking-wide text-indigo-600 dark:text-indigo-400">Project Description</h2>
           <p className="text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">{ABOUT}</p>
         </div>
       </section>
