@@ -4,10 +4,10 @@ import { PageHeader } from '@/components/layout/PageHeader'
 
 export const metadata: Metadata = { title: 'Team' }
 
-const TEAM_NAME = 'Team 1'
-const PROJECT_NAME = 'Capstone Project 1'
+const TEAM_NAME = 'Team 44'
+const PROJECT_NAME = 'TidyLens'
 const ABOUT =
-  'A four-person capstone team turning the client brief into a working product across three sprints.'
+  'Extend a mixed reality demonstrator for the Meta Quest 3 which assists the wearer with searching, sorting or tidying-related tasks via cloud-based computer vision. For example, while the user is sorting equipment wearing the headset in passthrough mode, the system identifies and categorises items it sees, recalling the location for later retrieval. The system should maintain an inventory of known items with rough locations and respond to user queries about the location of objects by name.'
 
 type Member = {
   name: string
