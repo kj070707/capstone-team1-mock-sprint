@@ -34,10 +34,10 @@ describe('Team Page', () => {
     render(await TeamPage())
 
     expect(screen.getByText('Team Name')).toBeInTheDocument()
-    expect(screen.getByText('Team 1')).toBeInTheDocument()
+    expect(screen.getByText('Team 44')).toBeInTheDocument()
 
     expect(screen.getByText('Project Name')).toBeInTheDocument()
-    expect(screen.getByText('Capstone Project 1')).toBeInTheDocument()
+    expect(screen.getByText('TidyLens')).toBeInTheDocument()
   })
 
 // test 3: check that the About the Team section and its blurb are displayed
@@ -47,7 +47,7 @@ describe('Team Page', () => {
     expect(screen.getByText('About the team')).toBeInTheDocument()
     expect(
       screen.getByText(
-        'A four-person capstone team turning the client brief into a working product across three sprints.'
+        'Extend a mixed reality demonstrator for the Meta Quest 3 which assists the wearer with searching, sorting or tidying-related tasks via cloud-based computer vision. For example, while the user is sorting equipment wearing the headset in passthrough mode, the system identifies and categorises items it sees, recalling the location for later retrieval. The system should maintain an inventory of known items with rough locations and respond to user queries about the location of objects by name.'
       )
     ).toBeInTheDocument()
   })
