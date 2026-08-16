@@ -26,19 +26,19 @@ const members: Member[] = [
     name: 'Sabah',
     role: 'Business Analyst',
     blurb: 'Turns client conversations into clear requirements for the team.',
-    photo: 'https://randomuser.me/api/portraits/women/44.jpg',
+    photo: '/team/sabah.jpg',
   },
   {
     name: 'Zeeshan',
     role: 'UX Designer',
     blurb: 'Designs the interface and the flow from login into the team page.',
-    photo: 'https://randomuser.me/api/portraits/men/32.jpg',
+    photo: '/team/zeeshan.jpg',
   },
   {
     name: 'Karmanya',
     role: 'Developer',
     blurb: 'Builds the features and ships them through the git workflow.',
-    photo: 'https://randomuser.me/api/portraits/men/75.jpg',
+    photo: '/team/karmanya.jpg',
   },
 ]
 
@@ -76,16 +76,16 @@ export default async function TeamPage() {
         <h2 className="text-lg font-semibold">Our Team</h2>
         <div className="grid gap-4 sm:grid-cols-2">
           {members.map((m) => (
-            <div key={m.name} className="flex gap-4 rounded-lg border border-zinc-200 p-4 transition-colors hover:border-indigo-300 dark:border-zinc-800">
+            <div key={m.name} className="group flex gap-4 rounded-lg border border-zinc-200 p-4 transition-colors hover:border-indigo-300 dark:border-zinc-800">
               {m.photo ? (
                 // eslint-disable-next-line @next/next/no-img-element
                 <img
                   src={m.photo}
                   alt={m.name}
-                  className="h-16 w-16 shrink-0 rounded-full object-cover"
+                  className="h-16 w-16 shrink-0 rounded-full object-cover transition-transform duration-200 group-hover:scale-110"
                 />
               ) : (
-                <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-indigo-100 text-lg font-semibold text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300">
+                <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-indigo-100 text-lg font-semibold text-indigo-700 transition-transform duration-200 group-hover:scale-110 dark:bg-indigo-950 dark:text-indigo-300">
                   {initials(m.name)}
                 </div>
               )}
